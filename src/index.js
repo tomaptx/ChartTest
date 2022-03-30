@@ -29,8 +29,10 @@ const chart = c3.generate(options);
 
 
 window.updateChartData = (data) => {
-  alert("updateChartData");
-chart.load;
-
+  // alert("updateChartData");
+  const newData = JSON.parse(data);
+  const load = newData.load;
+  const unload = newData.unload;
+chart.load({columns: load, unload: unload});
 };
 }
